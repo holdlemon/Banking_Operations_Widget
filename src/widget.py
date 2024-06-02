@@ -4,6 +4,8 @@ from masks import mask_account, mask_card
 
 
 def mask_data(data: str) -> str:
+    """ Маскирует номер карты/счета в зависимости от типа """
+
     name = []
     number = []
     for i in data:
@@ -19,6 +21,7 @@ def mask_data(data: str) -> str:
 
 
 def convert_date(date: str) -> str:
+    """ Конвертирует дату """
     cor_date = datetime.strptime(date, "%Y-%m-%dT%H:%M:%S.%f")
     cor_date_str = datetime.strftime(cor_date, "%d.%m.%Y")
     return cor_date_str
