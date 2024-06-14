@@ -6,9 +6,18 @@ from src.masks import mask_account, mask_card
 def mask_data(data: str) -> str:
     """ Маскирует номер карты/счета в зависимости от типа """
 
-    if data[:4] == "Счет":
-        return f"{data[:5]}{mask_account(int(data[5:]))}"
-    return f"{data[:-16]}{mask_card(int(data[-16:]))} "
+    name = []
+    number = []
+    for i in data:
+        if i.isalpha():
+            name.append(i)
+        elif i.isdigit():
+            number.append(i)
+
+    if len(number) == 16:
+        return f"{"".join(name)} {mask_card(int("".join(number)))}"
+    else:
+        return f"{"".join(name)} {mask_account(int("".join(number)))}"
 
 def convert_date(date: str) -> str:
     """ Конвертирует дату """
