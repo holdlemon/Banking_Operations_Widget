@@ -19,7 +19,6 @@ def mask_data(data: str) -> str:
     else:
         return f"{"".join(name)} {mask_account(int("".join(number)))}"
 
-
 def convert_date(date: str) -> str:
     """ Конвертирует дату """
     cor_date = datetime.strptime(date, "%Y-%m-%dT%H:%M:%S.%f")
