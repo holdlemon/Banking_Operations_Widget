@@ -1,5 +1,4 @@
-from typing import Dict, Generator, List
-
+from typing import Dict, Generator, List, Union
 
 transact = [
     {
@@ -50,7 +49,9 @@ transact = [
 ]
 
 
-def filter_by_currency(transactions: List[Dict], currency: str = "USD") -> Generator[Dict[str, object], None, None]:
+def filter_by_currency(transactions: List[Dict], currency: str = "USD") -> Generator[
+    Dict[str, Union[str, int, dict]], None, None
+]:
     """По очереди возвращает ID операции, в которых указана данная валюта"""
 
     for transaction in transactions:
