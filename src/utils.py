@@ -1,9 +1,9 @@
 import json
 import os
-from typing import List, Dict
+from typing import Dict, List
 
 
-def get_transaction(path: str) -> List[Dict]:
+def get_transactions(path: str) -> List[Dict]:
     """ Возвращает список словарей, содержащих данные об транзакциях"""
     if not os.path.exists(path):
         return []
@@ -23,4 +23,4 @@ def get_transaction(path: str) -> List[Dict]:
 
 if __name__ == "__main__":
     file_path = "../data/operations.json"
-    print(get_transaction(file_path))
+    print(get_transactions(file_path))
