@@ -1,8 +1,6 @@
 import unittest
 from unittest.mock import patch, mock_open
-import json
-import os
-from typing import List, Dict
+
 
 from src.utils import get_transactions
 
