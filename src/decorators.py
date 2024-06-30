@@ -36,6 +36,7 @@ def log(filename: Optional[str] = None) -> Callable:
 
     return decorator
 
+
 # Для проверки работы Pytest
 @log()
 def my_function(x, y):
